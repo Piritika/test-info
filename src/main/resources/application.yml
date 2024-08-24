@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: test-info
+
+logging:
+  level:
+    root: INFO
+    org.springframework.integration: INFO
+  pattern:
+    console: "%clr([%-5level]) %clr(%d{yyy-MM-dd HH:mm:ss.SS}){yellow} [%thread] %clr([%-26logger{26}:%L]:){cyan} requestId:[%X{requestId}] %m%wEx%n"
+
+server:
+  port: 8082

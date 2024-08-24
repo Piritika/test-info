@@ -1,0 +1,77 @@
+###
+GET http://localhost:8081/user/3
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-ID: {{$uuid}}
+
+###
+POST http://localhost:8082/personal-data/check
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-ID: {{$uuid}}
+
+{
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "middleName": "Ivanovich",
+  "age": 19,
+  "email": "test-user@test.ru",
+  "phoneNumber": "76660000000"
+}
+
+###
+GET http://localhost:8081/simple/user/1
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-ID: {{$uuid}}
+
+###
+POST http://localhost:8081/simple/user/add-user
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-ID: {{$uuid}}
+
+{
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "age": 19
+}
+
+###
+POST http://localhost:8081/simple/user/update-user
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-ID: {{$uuid}}
+
+{
+  "userId": 3,
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "age": 20
+}
+
+###
+POST http://localhost:8081/simple/user/update-details-user/3?age=25
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-ID: {{$uuid}}
+
+###
+POST http://localhost:8081/simple/user/delete-user
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+X-Request-ID: {{$uuid}}
+
+{
+  "userId": 3,
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "age": 20
+}
